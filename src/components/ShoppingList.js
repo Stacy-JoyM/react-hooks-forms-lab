@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ItemForm from "./ItemForm";
 import Filter from "./Filter"; // Assuming you have a Filter component
 import Item from "./Item"; // Assuming you have an Item component
-import { v4 as uuid } from "uuid";
+
 
 function ShoppingList({ items, setItems }) {
   const [search, setSearch] = useState("");
@@ -20,9 +20,9 @@ function ShoppingList({ items, setItems }) {
   }
 
   
-  function onItemFormSubmit(newItem) {
+  function onItemFormSubmit( newItem) {
 
-    setItems((items)=> [...items, newItem]); // Update the items state
+    setItems((prevItems)=>[...prevItems, newItem]); // Update the items state
 
   }
 

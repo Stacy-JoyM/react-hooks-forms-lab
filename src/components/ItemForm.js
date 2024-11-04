@@ -14,7 +14,7 @@ function ItemForm({ onItemFormSubmit }) {
     setCategory(event.target.value);
   }
   function handleSubmit(event){
-    event.preventDefault;
+    event.preventDefault()
   
     
         // Create the new item here
