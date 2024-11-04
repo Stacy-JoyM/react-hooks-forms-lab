@@ -7,12 +7,9 @@ import { v4 as uuid } from "uuid";
 function ShoppingList({ items, setItems }) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [category, setCategory] = useState("Produce");
-  const [name, setName] = useState("");
 
-  function handleNameChange(event) {
-    setName(event.target.value);
-  }
+
+  
 
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
@@ -22,15 +19,10 @@ function ShoppingList({ items, setItems }) {
     setSearch(event.target.value);
   }
 
-  function handleCategoryAdd(event) {
-    setCategory(event.target.value);
-  }
-
+  
   function onItemFormSubmit(newItem) {
 
     setItems((items)=> [...items, newItem]); // Update the items state
-    setName(""); // Clear the name field after submission
-    setCategory("Produce"); // Reset category to default after submission
 
   }
 
@@ -43,10 +35,6 @@ function ShoppingList({ items, setItems }) {
     <div className="ShoppingList">
       <ItemForm 
         onItemFormSubmit={onItemFormSubmit} 
-        category={category} 
-        handleCategoryAdd={handleCategoryAdd} 
-        name={name} 
-        handleNameChange={handleNameChange} 
       />
       <Filter 
         handleCategoryChange={handleCategoryChange} 

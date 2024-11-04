@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { v4 as uuid } from "uuid";
 
-function ItemForm({ onItemFormSubmit, handleCategoryAdd, category, handleNameChange, name }) {
+function ItemForm({ onItemFormSubmit }) {
+  const [category, setCategory] = useState("Produce")
+  const [name, setName] = useState("")
+
+  function handleNameChange(event) {
+    setName(event.target.value);
+
+  }
+
+  function handleCategoryAdd(event) {
+    setCategory(event.target.value);
+  }
   function handleSubmit(event){
     event.preventDefault;
   
