@@ -5,7 +5,7 @@ import App from "../components/App";
 
 test("calls the onItemFormSubmit callback prop when the form is submitted", () => {
   const onItemFormSubmit = jest.fn();
-  render(<ItemForm onItemFormSubmit={onItemFormSubmit} />);
+  render(<ItemForm onItemFormSubmit={onItemFormSubmit} category="Dessert" handleCategoryAdd={() => {}} name="Ice Cream" handleNameChange={() => {}}/>);
 
   fireEvent.change(screen.queryByLabelText(/Name/), {
     target: { value: "Ice Cream" },
